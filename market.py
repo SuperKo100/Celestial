@@ -1,7 +1,7 @@
 import streamlit as st
 import yfinance as yf
 
-tikcer = st.selectbox(
+ticker = st.selectbox(
     "Select a ticker",
     ["TSM", "NVDA", "IWY", "GLD"]
 )
