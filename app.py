@@ -4,11 +4,10 @@ pg = st.navigation(
     {
         "Market": [
             st.Page("market.py", title="Market", icon=":material/add_circle:"),
-            # st.Page("delete.py", title="Delete entry", icon=":material/delete:")
         ],
-        # "System": [
-        #     st.Page("market.py", title="Market", icon=":material/add_circle:"),
-        # ]
+        "System": [
+            st.Page("market.py", title="Market", icon=":material/add_circle:"),
+        ]
     }
 )
 
