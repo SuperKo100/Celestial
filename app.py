@@ -6,7 +6,7 @@ pg = st.navigation(
             st.Page("market.py", title="Market", icon=":material/add_circle:")
         ],
         "System": [
-            st.Page("market.py", title="Market", icon=":material/add_circle:")
+            st.Page("system.py", title="System", icon=":material/add_circle:")
         ]
     }
 )
