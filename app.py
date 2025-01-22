@@ -7,7 +7,7 @@ pg = st.navigation(
             # st.Page("delete.py", title="Delete entry", icon=":material/delete:")
         ],
         "System": [
-            
+            st.Page("market.py", title="Market", icon=":material/add_circle:"),
         ]
     }
 )
