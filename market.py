@@ -4,4 +4,4 @@ import yfinance as yf
 tickers = ["TSM", "NVDA", "IWY", "GLD"]
 history = yf.download(tickers, period="10y")
 
-st.dataframe(history)
+st.dataframe(history[["Close", "Volume"]])
