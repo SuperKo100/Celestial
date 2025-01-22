@@ -3,10 +3,10 @@ import streamlit as st
 pg = st.navigation(
     {
         "Market": [
-            st.Page("market.py", title="Market", icon=":material/add_circle:"),
+            st.Page("market.py", title="Market", icon=":material/add_circle:")
         ],
         "System": [
-            st.Page("market.py", title="Market", icon=":material/add_circle:"),
+            st.Page("market.py", title="Market", icon=":material/add_circle:")
         ]
     }
 )
