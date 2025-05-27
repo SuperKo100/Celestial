@@ -8,11 +8,11 @@ with open("google_analytics.html", "r") as f:
 
 pg = st.navigation(
     {
-        "Market": [
-            st.Page("market.py", title="Market", icon=":material/add_circle:")
+        "Analyzer": [
+            st.Page("01 analyzer.py", title="Analyzer", icon=":material/add_circle:")
         ],
-        "System": [
-            st.Page("system.py", title="System", icon=":material/add_circle:")
+        "Market": [
+            st.Page("02 Market.py", title="Market", icon=":material/add_circle:")
         ]
     }
 )
