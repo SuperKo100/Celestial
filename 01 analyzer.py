@@ -3,8 +3,7 @@ import yfinance as yf
 from mistralai import Mistral
 
 # LLM
-MISTRAL_API_KEY = "YkwXX7KW6nZ5uhUF1zRjEGQmnylSG6jU"
-client = Mistral(api_key=MISTRAL_API_KEY)
+client = Mistral(api_key=st.secrets["MISTRAL_API_KEY"])
 securities = ["NVDA", "AAPL", "MSFT", "GOOGL", "AMZN"]
 
 @st.cache_data
