@@ -1,5 +1,6 @@
 import streamlit as st
 import yfinance as yf
+import graphviz
 
 tickers = ["TSM", "NVDA", "IWY", "GLD"]
 history = yf.download(tickers, period="10y")
