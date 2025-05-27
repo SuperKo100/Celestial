@@ -2,13 +2,6 @@ import streamlit as st
 import yfinance as yf
 from mistralai import Mistral
 
-# Set the page configuration
-st.set_page_config(
-    page_title="Stock Price App",
-    page_icon="📈",
-    layout="wide"
-)
-
 # LLM
 MISTRAL_API_KEY = "YkwXX7KW6nZ5uhUF1zRjEGQmnylSG6jU"
 client = Mistral(api_key=MISTRAL_API_KEY)
