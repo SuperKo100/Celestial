@@ -31,7 +31,7 @@ def main() -> None:
     # Define the sidebar
     with st.sidebar:
         sec = st.radio(
-            "Which stock do you want to analyze?",
+            "Stocks",
             data.keys()
         )
         st.divider()
