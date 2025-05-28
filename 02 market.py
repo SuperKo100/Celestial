@@ -1,11 +1,13 @@
 import streamlit as st
-import yfinance as yf
+import pandas as pd
+import pandas_datareader as pdr
 import graphviz
 
-tickers = ["TSM", "NVDA", "IWY", "GLD"]
-history = yf.download(tickers, period="10y")
+@st.cache_data
+def getdata(s: str) -> pd.DataFrame:
+    return pdr.get_data_fred(s)
 
-st.dataframe(history[["Close", "Volume"]])
+st.DataFrame(getdata("GS10"))
 
 # Create a graphlib graph object
 graph = graphviz.Digraph()
