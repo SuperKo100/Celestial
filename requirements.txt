@@ -1,4 +1,5 @@
 graphviz
+distutils
 yfinance
 pandas
 pandas-datareader
