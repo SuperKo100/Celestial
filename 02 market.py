@@ -12,6 +12,7 @@ def getdata(s: str) -> pd.DataFrame:
     """
     x = requests.get(f"https://api.stlouisfed.org/fred/series/observations?api_key={st.secrets['FRED_API_KEY']}&file_type=json&series_id={s}")
     y = pd.read_json(x.json()["observations"])
+    return y
 
 data = getdata("SP500")
 st.write(data)
