@@ -16,7 +16,7 @@ def getdata(s: str) -> pd.DataFrame:
     y = y.query("value.str.isnumeric()")
     return y
 
-data = getdata("SP500")
+data = getdata("TRESEGCNM052N")
 st.write(data)
 st.line_chart(data)
 
