@@ -9,7 +9,7 @@ def getdata(s: str) -> pd.DataFrame:
     Args:
         s (str): index symbol
     """
-    x = pd.read_json(f"https://api.stlouisfed.org/fred/series?api_key={st.secrets['FRED_API_KEY']}&file_type=json&series_id={s}")
+    x = pd.read_json(f"api.stlouisfed.org/fred/series/observations?api_key={st.secrets['FRED_API_KEY']}&file_type=json&series_id={s}")
     return x
 
 data = getdata("GNPCA")
