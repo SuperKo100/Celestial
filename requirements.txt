@@ -1,3 +1,4 @@
+pandas
 graphviz
 yfinance
 mistralai

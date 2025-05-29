@@ -1,6 +1,19 @@
 import streamlit as st
+import pandas as pd
 import graphviz
 
+@st.cache_data
+def getdata(s: str) -> pd.DataFrame:
+    """
+    Fetches data from FRED for a given index
+    Args:
+        s (str): index symbol
+    """
+    x = pd.read_json(f"https://api.stlouisfed.org/fred/series?api_key={st.secret('FRED_API_KEY')}&file_type=json&series_id={s}")
+    return x
+
+data = getdata("GNPCA")
+st.write(data)
 
 # Create a graphlib graph object
 graph = graphviz.Digraph()
