@@ -16,6 +16,7 @@ def getdata(s: str) -> pd.DataFrame:
 
 data = getdata("SP500")
 st.write(data)
+st.chart(data)
 
 # Create a graphlib graph object
 graph = graphviz.Digraph()
