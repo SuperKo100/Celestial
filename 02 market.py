@@ -14,7 +14,7 @@ def getdata(s: str) -> pd.DataFrame:
     y = pd.DataFrame(x.json()["observations"])[["date", "value"]]
     return y
 
-data = getdata("SP500")
+data = getdata("SP500").set_index("date")
 st.write(data)
 st.line_chart(data)
 
