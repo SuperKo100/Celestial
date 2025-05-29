@@ -13,7 +13,7 @@ def getdata(s: str) -> pd.DataFrame:
     x = pd.read_json(f"https://api.stlouisfed.org/fred/series/observations?api_key={st.secrets['FRED_API_KEY']}&file_type=json&series_id={s}")
     return x
 
-data = getdata("SP500")
+data = getdata("T10Y3M")
 st.write(data)
 
 # Create a graphlib graph object
