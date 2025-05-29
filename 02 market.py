@@ -12,9 +12,11 @@ def getdata(s: str) -> pd.DataFrame:
     """
     x = requests.get(f"https://api.stlouisfed.org/fred/series/observations?api_key={st.secrets['FRED_API_KEY']}&file_type=json&series_id={s}")
     y = pd.DataFrame(x.json()["observations"])[["date", "value"]]
+    y.set_index("date", inplace=True)
+    y.dropna(inplace=True)
     return y
 
-data = getdata("SP500").set_index("date")
+data = getdata("SP500")
 st.write(data)
 st.line_chart(data)
 
