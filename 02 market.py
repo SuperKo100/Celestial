@@ -10,10 +10,10 @@ def getdata(s: str) -> pd.DataFrame:
     Args:
         s (str): index symbol
     """
-    x = pd.read_json(f"https://api.stlouisfed.org/fred/series/observations?api_key={st.secrets['FRED_API_KEY']}&file_type=json&series_id={s}")
-    return x
+    x = requests.get(f"https://api.stlouisfed.org/fred/series/observations?api_key={st.secrets['FRED_API_KEY']}&file_type=json&series_id={s}")
+    return x.json()
 
-data = getdata("T10Y3M")
+data = getdata("SP500")
 st.write(data)
 
 # Create a graphlib graph object
