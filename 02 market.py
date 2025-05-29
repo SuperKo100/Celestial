@@ -31,8 +31,9 @@ indices = {
 
 index = st.selectbox("Select an index",
                      indices.keys())
-data = getdata("indices[index]")
-st.write(f"You select {index} and its symbol is {indices[index]}")
+symbol = indices[index]
+data = getdata(symbol)
+st.write(f"You select {index} and its symbol is {symbol}")
 st.write(data)
 st.line_chart(data)
 
