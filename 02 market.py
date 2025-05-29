@@ -11,7 +11,7 @@ def getdata(s: str) -> pd.DataFrame:
         s (str): index symbol
     """
     x = requests.get(f"https://api.stlouisfed.org/fred/series/observations?api_key={st.secrets['FRED_API_KEY']}&file_type=json&series_id={s}")
-    y = pd.DataFrame(x.json()["observations"])["date", "value"]
+    y = pd.DataFrame(x.json()["observations"])[["date", "value"]]
     return y
 
 data = getdata("SP500")
