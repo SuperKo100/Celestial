@@ -4,13 +4,13 @@ import requests
 import graphviz
 
 @st.cache_data
-def getdata(s: str):
+def getdata(s: str) -> pd.DataFrame:
     """
     Fetches data from FRED for a given index
     Args:
         s (str): index symbol
     """
-    x = requests.get(f"https://api.stlouisfed.org/fred/series/observations?api_key={st.secrets['FRED_API_KEY']}&file_type=json&series_id={s}")
+    x = pd.read_json(f"https://api.stlouisfed.org/fred/series/observations?api_key={st.secrets['FRED_API_KEY']}&file_type=json&series_id={s}")
     return x
 
 data = getdata("SP500")
