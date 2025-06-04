@@ -13,7 +13,7 @@ def getdata(s: str) -> dict:
     data.columns = data.columns.to_flat_index().str.join('_')
     return data
 
-df = getdata(s)
+df = getdata("NVDA")
 st.dataframe(df)
 
 st.write(os.listdir())
