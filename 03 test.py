@@ -10,7 +10,7 @@ def getdata(s: str) -> dict:
         s (str): Stock symbol.  
     """
     data = yf.download([s, "^SPX"], period="ytd", interval="1wk", multi_level_index=False)
-    data.columns = data.columns.to_flat_index().str.join('_')
+    data.columns = [f"{b}_{a}" for (a, b) in df.columns.to_flat_index()] # data.columns.to_flat_index().str.join('_')
     data = data.fillna(method="ffill").replace(0, method="ffill")
     return data
 
