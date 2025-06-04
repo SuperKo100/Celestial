@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import yfinance as yf
 
@@ -14,3 +15,5 @@ def getdata(s: str) -> dict:
 
 df = getdata(s)
 st.dataframe(df)
+
+st.write(os.listdir())
