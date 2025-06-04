@@ -14,7 +14,7 @@ def getdata(s: str) -> dict:
     data = data[[f"Open_{s}", f"High_{s}", f"Low_{s}", f"Close_{s}", f"Volume_{s}",
                 "Open_^SPX", "High_^SPX", "Low_^SPX", "Close_^SPX", "Volume_^SPX"]]
     data = data.fillna(method="ffill").replace(0, method="ffill")
-    return data
+    return data.pct_change()
 
 df = getdata("NVDA")
 st.dataframe(df)
