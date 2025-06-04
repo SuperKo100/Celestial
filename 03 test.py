@@ -13,4 +13,4 @@ def getdata(s: str) -> dict:
     return data
 
 df = getdata(s)
-st.dataframe(s)
+st.dataframe(df)
