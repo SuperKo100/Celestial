@@ -52,7 +52,7 @@ selected_row = event.selection["rows"]
 
 st.divider()
 
-if row:
+if selected_row:
     symbol = df_show.iloc[selected_row].iat[0,0]
     df_stock = get_candles(symbol)
     col1, col2, col3 = st.columns(3)
