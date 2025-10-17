@@ -56,7 +56,7 @@ cols = ["symbol",
         "fiftyTwoWeekHigh", 
         "fiftyTwoWeekLow"]
 
-df_show = get_scrren(topic)[cols]
+df_show = get_screen(topic)[cols]
 event = st.dataframe(data=df_show,
                     hide_index=True,
                     on_select="rerun",
