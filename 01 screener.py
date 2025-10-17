@@ -42,7 +42,7 @@ def get_candles(symbol: str) -> pd.DataFrame:
 
 topic = st.selectbox(
     "Choose a topic:",
-    topics,
+    screens,
     index=0
 )
 
