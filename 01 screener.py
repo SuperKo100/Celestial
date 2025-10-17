@@ -6,7 +6,7 @@ import yfinance as yf
 
 st.set_page_config(layout="wide")
 
-topics = [
+screens = [
     "growth_technology_stocks",
     "most_actives",
     "most_shorted_stocks",
@@ -31,7 +31,7 @@ cols = [
 ]
 
 @st.cache_data(ttl=3600)
-def get_topic(topic: str) -> pd.DataFrame:
+def get_screen(topic: str) -> pd.DataFrame:
     df = pd.DataFrame(yf.screen(topic)["quotes"])
     return df
 
@@ -56,7 +56,7 @@ cols = ["symbol",
         "fiftyTwoWeekHigh", 
         "fiftyTwoWeekLow"]
 
-df_show = get_topic(topic)[cols]
+df_show = get_scrren(topic)[cols]
 event = st.dataframe(data=df_show,
                     hide_index=True,
                     on_select="rerun",
